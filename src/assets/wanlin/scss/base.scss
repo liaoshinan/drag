@@ -1,0 +1,237 @@
+@charset "utf-8";
+.clearfix{
+        overflow: hidden;
+        zoom:1;
+}
+ 
+.fl{
+    float:left;
+}
+.fr{
+    float:right;
+}
+
+[v-cloak] { display: none }
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, p, blockquote, th, td {
+    margin: 0;
+    padding: 0;
+
+}
+body,html{
+    font-family: Helvetica, Tahoma, Arial, "Microsoft YaHei", "微软雅黑", SimSun, "宋体", STXihei, "华文细黑", Heiti, "黑体", sans-serif;
+    width:100%;
+    min-width:1200px;
+    height:100%;
+    position:relative;
+}
+body{
+    font-size:100%;
+}
+
+fieldset, img {
+    border: 0;
+}
+ol, ul {
+    list-style: none;
+}
+em {
+    font-style: normal;
+}
+input, button, select, textarea {
+    outline: none;
+}
+textarea {
+    resize: none;
+}
+b, strong {
+    font-weight: normal;
+}
+a {
+    color: #616161;
+    text-decoration: none;
+}
+a:hover {
+    color: #626262;
+    text-decoration: none;
+}
+.clearfix:before, .clearfix:after {
+    content: "";
+    display: table;
+}
+.clearfix:after {
+    clear: both;
+}
+.clearfix {
+    zoom: 1;
+}
+.radius{
+    border-radius: 5px;
+}
+.bds{
+    box-shadow: 0 0 5px #cccccc;
+    -webkit-box-shadow: 0 0 5px #cccccc;
+    -moz-box-shadow: 0 0 5px #cccccc;
+    -ms-box-shadow: 0 0 5px #cccccc;
+}
+a.text_line{
+    text-decoration: underline;
+}
+a.a_t_line:hover{
+    text-decoration: underline;
+}
+.indet_10{
+    text-indent: 10px;
+}
+.t_d_18{
+    text-indent: 18px;
+}
+.t_d_12{
+    text-indent: 12px;
+}
+.t_d_10{
+    text-indent: 10px;
+}
+.t_d_8{
+    text-indent: 8px;
+}
+.t_d_6{
+    text-indent: 6px;
+}
+.t_d_5{
+    text-indent: 5px;
+}
+.pointer{
+    cursor: pointer;
+}
+.dis-none{
+    display: none;
+}
+.dis-block{
+    display: block;
+}
+
+.fl{
+    float:left;
+}
+.fr{
+    float:right;
+}
+
+/*table*/
+.table-info{
+    font-size:14px;
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0px;
+    background: #fff;
+}
+.table-info>thead{
+    background: #F9FAFC;
+    box-shadow: inset 0 1px 0 0 #C0CCDA, inset 0 -1px 0 0 #C0CCDA;
+}
+.table-info tr td{
+    border:1px solid #ededed;
+    padding: 8px 0 8px 18px;
+    
+}
+.table-info tr td>img{
+    width:60px;
+    height:30px;
+}
+.table-info tr td>span{
+    cursor: pointer;
+}
+.table-info tr td .edit>a{
+    color:#000;
+}
+
+.table-info tr td .edit{
+    margin-right:4px;
+    color:#000;
+}
+.overNone{
+    max-width:300px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+}
+/*遮罩*/
+.Mask{
+    width:100%;
+    height:100%;
+    position:absolute;
+    background:rgba(0,0,0,0.8);
+    left:0;
+    top:0;
+    z-index:10 !important;
+    display: none;
+}
+.spinner {
+  margin: 100px auto 0;
+  width: 150px;
+  text-align: center;
+}
+ 
+.spinner > div {
+  width: 30px;
+  height: 30px;
+  background-color: #67CF22;
+ 
+  border-radius: 100%;
+  display: inline-block;
+  -webkit-animation: bouncedelay 1.4s infinite ease-in-out;
+  animation: bouncedelay 1.4s infinite ease-in-out;
+  /* Prevent first frame from flickering when animation starts */
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+ 
+.spinner .bounce1 {
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s;
+}
+ 
+.spinner .bounce2 {
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s;
+}
+ 
+@-webkit-keyframes bouncedelay {
+  0%, 80%, 100% { -webkit-transform: scale(0.0) }
+  40% { -webkit-transform: scale(1.0) }
+}
+ 
+@keyframes bouncedelay {
+  0%, 80%, 100% {
+    transform: scale(0.0);
+    -webkit-transform: scale(0.0);
+  } 40% {
+    transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+  }
+}
+
+
+/*旋转*/
+.active-rotate1{
+    -webkit-animation:circle 0.3s 1 alternate forwards;
+    -moz-animation:circle 0.3s 1 alternate forwards;
+    -o-animation:circle 0.3s 1 alternate forwards;
+    -ms-animation:circle 0.3s 1 alternate forwards;
+}
+@-webkit-keyframes circle{
+    0%{ transform:rotate(0deg); }
+    100%{ transform:rotate(90deg); }
+}
+
+.active-rotate2{
+    -webkit-animation:circlel 0.3s 1 alternate forwards;
+    -moz-animation:circlel 0.3s 1 alternate forwards;
+    -o-animation:circlel 0.3s 1 alternate forwards;
+    -ms-animation:circlel 0.3s 1 alternate forwards;
+}
+@-webkit-keyframes circlel{
+    0%{ transform:rotate(90deg); }
+    100%{ transform:rotate(0deg); }
+}
