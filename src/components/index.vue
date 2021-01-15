@@ -83,8 +83,10 @@ export default {
       document.getElementById('father').onmousedown = function(evn) {
         _this.odiv = evn.target
         if (evn.target.classList[0] === 'block') {
+          //当前事件指向是功能块执行拖动当前功能快操作
           _this.dragBlock()
         } else if (evn.target.classList[0] === 'point') {
+          //当前指向连接点的话创建新的svg线条，执行绘线操作
           _this.startPointDom = evn.target
           let changeEle = document.createElementNS('http://www.w3.org/2000/svg', 'path')
           _this.dragLine(changeEle, evn.clientX, evn.clientY)
@@ -92,6 +94,7 @@ export default {
       }
       document.onmouseup = function(evn) {
         if (_this.currentLine !== '') {
+          //绘制连接线的结束点判断，不是‘point’绘制失败，擦除当前绘制的线条
           if (evn.target.classList[0] !== 'point') {
             document.getElementById('svg').removeChild(_this.currentLine)
           } else {
@@ -109,6 +112,7 @@ export default {
         document.onmousemove = null
       }
     },
+    //计算三次贝塞尔曲线参数
     createCPath(x1, y1, x2, y2) {
       var path = 'M' + x1 + ' ' + y1 + ' '
       var cx1 = x1
@@ -119,6 +123,7 @@ export default {
       path = path + c + x2 + ' ' + y2
       return path
     },
+    //绘制svg连接线
     dragLine(pathDom, starOne, starTwo) {
       let _this = this
       this.currentLine = pathDom
@@ -143,12 +148,14 @@ export default {
         document.getElementById('svg').appendChild(pathDom)
       }
     },
+    //重置svg线条的参数
     changeLine(pathDom, startleft, starttop, endleft, endtop) {
       let line = this.createCPath(Number(startleft), Number(starttop), Number(endleft), Number(endtop))
       pathDom.setAttribute('data-start', startleft + ',' + starttop)
       pathDom.setAttribute('data-end', endleft + ',' + endtop)
       pathDom.setAttribute('d', line)
     },
+    //拖动功能快的时候重置功能块的连接线
     queryLine(domArry, boxLeft, boxTop) {
       for (let i = 0; i < domArry.length; i++) {
         let startId = domArry[i].getAttribute('data-start') ? domArry[i].getAttribute('data-start').split(',') : []
@@ -175,6 +182,7 @@ export default {
         }
       }
     },
+    //拖动功能块
     dragBlock() {
       let _this = this
       document.onmousemove = function(ev) {
